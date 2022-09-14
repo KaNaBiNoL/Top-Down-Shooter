@@ -9,7 +9,7 @@ namespace TDS.Game.Enemy
 
         private void OnEnable()
         {
-            _idle.enabled = true;
+            _idle.Activate();
         }
     }
 }

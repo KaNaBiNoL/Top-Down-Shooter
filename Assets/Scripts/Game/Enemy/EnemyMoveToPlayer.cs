@@ -7,32 +7,29 @@ namespace TDS.Game.Enemy
     public class EnemyMoveToPlayer : EnemyFollow
     {
         [SerializeField] private EnemyMovement _movement;
-        [SerializeField] private TriggerObserver _triggerObserver;
-        
-        private Transform _playerTransform;
 
-        
+        private Transform _playerTransform;
 
         private void Start()
         {
             _playerTransform = FindObjectOfType<PlayerHealth>().transform;
-            _triggerObserver.OnEntered += OnEntered;
-            _triggerObserver.OnExited += OnExited;
         }
 
-        private void OnEntered(Collider2D col)
+        public override void Activate()
         {
+            base.Activate();
             SetTarget(_playerTransform);
         }
 
-        private void OnExited(Collider2D other)
+        public override void DeActivate()
         {
+            base.DeActivate();
             SetTarget(null);
         }
 
         private void SetTarget(Transform target)
         {
-            _movement.SetTarger(target);
+            _movement.SetTarget(target);
         }
     }
 }

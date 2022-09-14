@@ -15,14 +15,14 @@ namespace TDS.Game.Enemy
         }
         private void OnEntered(Collider2D col)
         {
-            _follow.enabled = true;
-            _backToIdle.enabled = false;
+            _backToIdle.DeActivate();
+            _follow.Activate();
         }
 
         private void OnExited(Collider2D other)
         {
-            _follow.enabled = false;
-            _backToIdle.enabled = true;
+            _follow.DeActivate();
+            _backToIdle.Activate();
         } 
     }
 }

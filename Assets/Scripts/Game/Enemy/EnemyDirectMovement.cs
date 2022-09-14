@@ -41,7 +41,7 @@ namespace TDS.Game.Enemy
             _cachedTransform.up += direction;
         }
 
-        public override void SetTarger(Transform target)
+        public override void SetTarget(Transform target)
         {
             _target = target;
             if (_target == null)

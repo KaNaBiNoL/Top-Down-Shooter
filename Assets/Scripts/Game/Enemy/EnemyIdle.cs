@@ -2,7 +2,7 @@
 
 namespace TDS.Game.Enemy
 {
-    public abstract class EnemyIdle: MonoBehaviour
+    public abstract class EnemyIdle: EnemyBehaviour
     {
         
     }
