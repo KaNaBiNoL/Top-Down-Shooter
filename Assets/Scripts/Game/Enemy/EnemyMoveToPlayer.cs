@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace TDS.Game.Enemy
 {
-    public class EnemyMoveToPlayer : MonoBehaviour
+    public class EnemyMoveToPlayer : EnemyFollow
     {
-        [SerializeField] private EnemyMovement _enemyMovement;
+        [SerializeField] private EnemyMovement _movement;
         [SerializeField] private TriggerObserver _triggerObserver;
         
         private Transform _playerTransform;
@@ -32,7 +32,7 @@ namespace TDS.Game.Enemy
 
         private void SetTarget(Transform target)
         {
-            _enemyMovement.SetTarger(target);
+            _movement.SetTarger(target);
         }
     }
 }

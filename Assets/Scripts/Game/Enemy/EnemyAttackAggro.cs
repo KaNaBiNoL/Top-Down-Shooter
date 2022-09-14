@@ -1,13 +1,12 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace TDS.Game.Enemy
 {
     public class EnemyAttackAggro : MonoBehaviour
     {
         [SerializeField] private TriggerObserver _triggerObserver;
-        [SerializeField] private EnemyAttack _enemyAttack;
-        [SerializeField] private EnemyMovement _enemyMovement;
+        [SerializeField] private EnemyAttack _attack;
+        [SerializeField] private EnemyFollow _follow;
 
         private bool _isInRange;
 
@@ -21,20 +20,20 @@ namespace TDS.Game.Enemy
         {
             if (_isInRange)
             {
-                _enemyAttack.Attack();
+                _attack.Attack();
             }
         }
 
         private void OnEntered(Collider2D col)
         {
             _isInRange = true;
-            _enemyMovement.enabled = false;
+            _follow.enabled = false;
         }
 
         private void OnExited(Collider2D col)
         {
             _isInRange = false;
-            _enemyMovement.enabled = true;
+            _follow.enabled = true;
         }
     }
 }
