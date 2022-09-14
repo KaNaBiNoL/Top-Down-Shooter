@@ -23,25 +23,47 @@ namespace TDS.Game.Enemy
             if (!IsTargetValid())
             {
                 return;
+         
             }
 
             MoveToTarget();
+            RotateToTarget();
+        }
+
+        private void OnDisable()
+        {
+            SetVelocity(Vector2.zero);
+        }
+
+        private void RotateToTarget()
+        {
+            Vector3 direction = _target.position - _cachedTransform.position;
+            _cachedTransform.up += direction;
         }
 
         public void SetTarger(Transform target)
         {
             _target = target;
+            if (_target == null)
+            {
+                SetVelocity(Vector2.zero);
+            }
         }
 
         private void MoveToTarget()
         {
             Vector3 direction = (_target.position - _cachedTransform.position).normalized;
-            _rb.velocity = direction * _speed;
+           SetVelocity(direction * _speed);
         }
 
         private bool IsTargetValid()
         {
             return _target != null;
+        }
+
+        private void SetVelocity(Vector2 velocity)
+        {
+            _rb.velocity = velocity;
         }
     }
 }

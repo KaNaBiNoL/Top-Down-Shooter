@@ -1,9 +1,10 @@
 ﻿using System;
+using TDS.Game.Objects;
 using UnityEngine;
 
 namespace TDS.Game.Player
 {
-    public class PlayerHealth : MonoBehaviour
+    public class PlayerHealth : MonoBehaviour, IHealth
     {
         [SerializeField] private int _maxHp;
         [SerializeField] private int _startHp;

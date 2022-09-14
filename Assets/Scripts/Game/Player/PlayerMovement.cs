@@ -25,6 +25,10 @@ namespace TDS.Game.Player
             Move();
             Rotate();
         }
+        private void OnDisable()
+        {
+            _rb.velocity = Vector2.zero;
+        }
 
         private void Move()
         {
