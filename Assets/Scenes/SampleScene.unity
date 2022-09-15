@@ -21638,6 +21638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1450957172}
   - component: {fileID: 1450957173}
+  - component: {fileID: 1450957174}
   m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
@@ -21712,6 +21713,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1450957174
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450957171}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8817724f29dd25408dfeeb51736876b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1751527858
 GameObject:
   m_ObjectHideFlags: 0
@@ -21763,6 +21784,7 @@ GameObject:
   - component: {fileID: 1877352211}
   - component: {fileID: 1877352210}
   - component: {fileID: 1877352209}
+  - component: {fileID: 1877352212}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -21848,8 +21870,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08dd30704c29460ebcff972c9beabc31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHp: 0
-  _startHp: 0
+  _maxHp: 100
+  _startHp: 100
 --- !u!114 &1877352205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21862,6 +21884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3972db14dddb432a9470f80a425cef82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 1450957174}
 --- !u!58 &1877352206
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21897,6 +21920,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 64
+  _animation: {fileID: 1877352205}
 --- !u!114 &1877352208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21952,6 +21976,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a659c06e567a441581a021570218530c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1877352212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877352199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da09ff8ce614f4b8fc83a0a97179b91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1877352204}
+  _attack: {fileID: 0}
+  _movement: {fileID: 0}
+  _animation: {fileID: 1877352205}
 --- !u!1 &2011246416
 GameObject:
   m_ObjectHideFlags: 0
@@ -22179,7 +22219,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.1212654, y: 1}
+    m_SensorSize: {x: 1.6836555, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

@@ -11,6 +11,8 @@ namespace TDS.Game.Enemy
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private float _radius;
         [SerializeField] private LayerMask _layerMask;
+        [SerializeField] private EnemyAnimation _animation;
+        
 
         private float _delayTimer;
 
@@ -34,6 +36,7 @@ namespace TDS.Game.Enemy
 
         private void AttackInternal()
         {
+            _animation.PlayAttack();
             _delayTimer = _attackDelay;
             Collider2D col = Physics2D.OverlapCircle(_attackPoint.position, _radius, _layerMask);
             if (col == null)

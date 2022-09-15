@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace TDS.Game.Enemy
 {
@@ -8,21 +9,30 @@ namespace TDS.Game.Enemy
         [SerializeField] private EnemyAttack _attack;
         [SerializeField] private EnemyFollow _follow;
 
+        private bool _isInRange;
         private void Start()
         {
             _triggerObserver.OnEntered += OnEntered;
             _triggerObserver.OnExited += OnExited;
         }
 
+        private void Update()
+        {
+            if (_isInRange)
+            {
+                _attack.Attack();
+            }
+        }
+
         private void OnEntered(Collider2D col)
         {
+            _isInRange = true;
             _follow.DeActivate();
-            _attack.Activate();
         }
 
         private void OnExited(Collider2D col)
         {
-            _attack.DeActivate();
+            _isInRange = false;
             _follow.Activate();
         }
     }
