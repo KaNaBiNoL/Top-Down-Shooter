@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections;
+using TDS.Game.Player;
 using UnityEngine;
 
 namespace TDS.Game.Objects
 {
     [RequireComponent(typeof(Rigidbody2D))]
-    public class Bullet : MonoBehaviour
+    public class EnemyBullet : MonoBehaviour
     {
         private Rigidbody2D _rb;
         [SerializeField] private float _speed = 10f;
         [SerializeField] private float _lifeTime = 5f;
+        [SerializeField] private int _damage = 15;
+        
         
 
         private void Awake()
@@ -17,6 +20,15 @@ namespace TDS.Game.Objects
             _rb = GetComponent<Rigidbody2D>();
             _rb.velocity = transform.up * _speed;
             StartCoroutine(LifeTimeTimer());
+        }
+
+        private void OnTriggerEnter2D(Collider2D col)
+        {
+            if (col.CompareTag("Player"))
+            {
+                col.GetComponent<PlayerHealth>().ApplyDamage(_damage);
+                Destroy(gameObject);
+            }
         }
 
         private IEnumerator LifeTimeTimer()

@@ -10,12 +10,20 @@ namespace TDS.Game.Enemy
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            OnEntered?.Invoke(col);
+            if (col.CompareTag("Player"))
+            {
+                OnEntered?.Invoke(col);
+            }
+
+
         }
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            OnExited?.Invoke(other);
+            if (other.CompareTag("Player"))
+            {
+                OnExited?.Invoke(other);
+            }
         }
     }
 }
