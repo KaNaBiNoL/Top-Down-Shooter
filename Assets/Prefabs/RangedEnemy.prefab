@@ -327,7 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 1540867734373546456}
-  _attack: {fileID: 0}
+  _attackAggro: {fileID: 0}
+  _attack: {fileID: 2171646206765014270}
   _movement: {fileID: 1540867734373546461}
   _animation: {fileID: 1540867734373546457}
   _collider: {fileID: 1540867734373546458}
