@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TDS.Controll;
 using TDS.Game.Enemy;
 using UnityEngine;
 
@@ -23,9 +24,13 @@ namespace TDS.Game.Objects
         
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.CompareTag("Enemy"))
+            if (col.CompareTag(Tags.Enemy))
             {
                 col.GetComponent<EnemyHealth>().ApplyDamage(_damage);
+                Destroy(gameObject);
+            }
+            else if (col.CompareTag(Tags.Barrel))
+            {
                 Destroy(gameObject);
             }
         }
