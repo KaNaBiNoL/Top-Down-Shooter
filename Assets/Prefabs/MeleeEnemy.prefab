@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 811069811971011939}
   - component: {fileID: 811069811971011936}
   - component: {fileID: 811069811971011941}
+  - component: {fileID: 789105172954320369}
   m_Layer: 7
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -274,6 +275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
+  _animation: {fileID: 811069811971011964}
 --- !u!114 &811069811971011966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c2427984df14fe283d6e21d8d43da55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 2
+  _damage: 20
   _attackDelay: 1
   _attackPoint: {fileID: 811069811878730690}
   _radius: 1
@@ -351,6 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _follow: {fileID: 811069811971011962}
   _backToIdle: {fileID: 811069811971011936}
+  _idle: {fileID: 811069811971011938}
   _triggerObserver: {fileID: 811069810763522936}
 --- !u!114 &811069811971011936
 MonoBehaviour:
@@ -383,6 +386,19 @@ MonoBehaviour:
   _movement: {fileID: 811069811971011960}
   _animation: {fileID: 811069811971011964}
   _collider: {fileID: 811069811971011967}
+--- !u!114 &789105172954320369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 811069811971011958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822f71d875e14373b0b1e9057ff5c499, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _idle: {fileID: 811069811971011938}
 --- !u!1 &811069812113339138
 GameObject:
   m_ObjectHideFlags: 0

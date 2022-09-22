@@ -273,6 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 0
+  _animation: {fileID: 1540867734373546457}
 --- !u!58 &1540867734373546458
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -428,6 +429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _follow: {fileID: 7849196713439491930}
   _backToIdle: {fileID: 1540867734373546437}
+  _idle: {fileID: 1540867734373546439}
   _triggerObserver: {fileID: 1540867733434626013}
 --- !u!1 &1540867734465812326
 GameObject:

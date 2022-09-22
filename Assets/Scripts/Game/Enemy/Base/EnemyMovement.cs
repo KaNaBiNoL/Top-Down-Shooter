@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TDS.Game.Enemy
+namespace TDS.Game.Enemy.Base
 {
     public abstract class EnemyMovement : MonoBehaviour
     {

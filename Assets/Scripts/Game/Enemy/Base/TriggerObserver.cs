@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TDS.Game.Enemy
+namespace TDS.Game.Enemy.Base
 {
     public class TriggerObserver : MonoBehaviour
     {

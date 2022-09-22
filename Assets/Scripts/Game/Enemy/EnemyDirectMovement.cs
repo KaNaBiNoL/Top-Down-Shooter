@@ -1,4 +1,5 @@
 ﻿using System;
+using TDS.Game.Enemy.Base;
 using UnityEngine;
 
 namespace TDS.Game.Enemy
@@ -7,7 +8,8 @@ namespace TDS.Game.Enemy
     public class EnemyDirectMovement : EnemyMovement
     {
         [SerializeField] private float _speed = 4f;
-        
+        [SerializeField] private EnemyAnimation _animation;
+
         private Rigidbody2D _rb;
         private Transform _target;
         private Transform _cachedTransform;
@@ -23,7 +25,6 @@ namespace TDS.Game.Enemy
             if (!IsTargetValid())
             {
                 return;
-         
             }
 
             MoveToTarget();
@@ -53,7 +54,8 @@ namespace TDS.Game.Enemy
         private void MoveToTarget()
         {
             Vector3 direction = (_target.position - _cachedTransform.position).normalized;
-           SetVelocity(direction * _speed);
+            Vector3 velocity = (direction * _speed);
+            SetVelocity(velocity);
         }
 
         private bool IsTargetValid()
@@ -64,6 +66,7 @@ namespace TDS.Game.Enemy
         private void SetVelocity(Vector2 velocity)
         {
             _rb.velocity = velocity;
+            _animation.SetSpeed(velocity.magnitude);
         }
     }
 }

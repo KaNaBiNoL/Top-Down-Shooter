@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TDS.Game.Enemy
+namespace TDS.Game.Enemy.Base
 {
     public class EnemyAnimation : MonoBehaviour
     {
@@ -14,6 +14,11 @@ namespace TDS.Game.Enemy
         public void PlayDeath()
         {
             _animator.SetTrigger("Death");
+        }
+
+        public void SetSpeed(float speed)
+        {
+            _animator.SetFloat("Speed", speed);
         }
     }
 }

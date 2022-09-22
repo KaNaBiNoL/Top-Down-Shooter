@@ -1,4 +1,6 @@
-﻿namespace TDS.Game.Enemy
+﻿using TDS.Game.Enemy.Base;
+
+namespace TDS.Game.Enemy
 {
     public class EnemyStand : EnemyIdle
     {

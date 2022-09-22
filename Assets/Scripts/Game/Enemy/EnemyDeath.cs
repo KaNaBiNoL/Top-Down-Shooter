@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TDS.Game.Enemy.Base;
+using UnityEngine;
 
 namespace TDS.Game.Enemy
 {

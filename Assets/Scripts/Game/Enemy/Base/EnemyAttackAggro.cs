@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace TDS.Game.Enemy
+namespace TDS.Game.Enemy.Base
 {
     public class EnemyAttackAggro : MonoBehaviour
     {

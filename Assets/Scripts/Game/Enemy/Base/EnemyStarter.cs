@@ -1,14 +1,13 @@
 ﻿using System;
-using TDS.Game.Enemy.Base;
 using UnityEngine;
 
-namespace TDS.Game.Enemy
+namespace TDS.Game.Enemy.Base
 {
-    class EnemyInstantBackToIdle : EnemyBackToIdle
+    public class EnemyStarter : MonoBehaviour
     {
         [SerializeField] private EnemyIdle _idle;
 
-        private void OnEnable()
+        private void Start()
         {
             _idle.Activate();
         }

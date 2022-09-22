@@ -2,7 +2,7 @@
 using TDS.Game.Objects;
 using UnityEngine;
 
-namespace TDS.Game.Enemy
+namespace TDS.Game.Enemy.Base
 {
     public class EnemyHealth : MonoBehaviour, IHealth
     {

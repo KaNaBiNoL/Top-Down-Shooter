@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 
-namespace TDS.Game.Enemy
+namespace TDS.Game.Enemy.Base
 {
     public class EnemyFollowAggro : MonoBehaviour
     {
         [SerializeField] private EnemyFollow _follow;
         [SerializeField] private EnemyBackToIdle _backToIdle;
+        [SerializeField] private EnemyIdle _idle;
+        
         [SerializeField] private TriggerObserver _triggerObserver;
         
         private void Start()
@@ -15,7 +17,15 @@ namespace TDS.Game.Enemy
         }
         private void OnEntered(Collider2D col)
         {
-            _backToIdle.DeActivate();
+            if (_idle.IsActive)
+            {
+                _idle.DeActivate();
+            }
+            else
+            {
+                _backToIdle.DeActivate();
+            }
+            
             _follow.Activate();
         }
 

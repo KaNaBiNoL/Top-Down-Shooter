@@ -1,4 +1,5 @@
 ﻿using System;
+using TDS.Game.Enemy.Base;
 using TDS.Game.Player;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ namespace TDS.Game.Enemy
 {
     public class EnemyMeleeAttack : EnemyAttack
     {
-        [SerializeField] private int _damage = 2;
+        [SerializeField] private int _damage = 20;
         [SerializeField] private float _attackDelay;
         [SerializeField] private Transform _attackPoint;
         [SerializeField] private float _radius;

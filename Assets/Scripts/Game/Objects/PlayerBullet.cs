@@ -2,6 +2,7 @@
 using System.Collections;
 using TDS.Controll;
 using TDS.Game.Enemy;
+using TDS.Game.Enemy.Base;
 using UnityEngine;
 
 namespace TDS.Game.Objects
