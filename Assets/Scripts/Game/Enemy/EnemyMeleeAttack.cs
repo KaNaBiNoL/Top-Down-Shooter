@@ -30,15 +30,8 @@ namespace TDS.Game.Enemy
             }
         }
 
-        private void TickTimer()
+        public void PerformDamage()
         {
-            _delayTimer -= Time.deltaTime;
-        }
-
-        private void AttackInternal()
-        {
-            _animation.PlayAttack();
-            _delayTimer = _attackDelay;
             Collider2D col = Physics2D.OverlapCircle(_attackPoint.position, _radius, _layerMask);
             if (col == null)
             {
@@ -49,6 +42,18 @@ namespace TDS.Game.Enemy
             {
                 playerHealth.ApplyDamage(_damage);
             }
+        }
+
+        private void TickTimer()
+        {
+            _delayTimer -= Time.deltaTime;
+        }
+
+        private void AttackInternal()
+        {
+            _animation.PlayAttack();
+            _delayTimer = _attackDelay;
+            
         }
 
         private bool CanAttack() => 
