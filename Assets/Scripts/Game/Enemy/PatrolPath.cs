@@ -9,7 +9,10 @@ namespace TDS.Game.Enemy
         private int _currentIndex;
         public bool IsReached(Vector3 currentPosition, float distanceToPoint)
         {
-            throw new System.NotImplementedException();
+            Vector3 pointPosition = CurrentPoint().position;
+            float distance = Vector2.Distance(currentPosition, pointPosition);
+            return distance <= distanceToPoint;
+
         }
 
         public void SetNextPoint()
